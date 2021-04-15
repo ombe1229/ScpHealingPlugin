@@ -15,10 +15,18 @@ namespace ScpHealingPlugin
             string killerRole = killer.Role.ToString();
             if (_pluginInstance.Config.HealingAmount.ContainsKey(killerRole))
             {
-                killer.Health = killer.Health + _pluginInstance.Config.HealingAmount[killerRole] <= killer.MaxHealth
+                float health = killer.Health;
+                killer.Health = health + _pluginInstance.Config.HealingAmount[killerRole] <= killer.MaxHealth
                     ? _pluginInstance.Config.HealingAmount[killerRole]
                     : killer.MaxHealth;
+                
+                killer.Broadcast(10, FormatHealingMessage(_pluginInstance.Config.HealingAmount[killerRole], health, killer.MaxHealth));
             }
+        }
+
+        private string FormatHealingMessage(float amount, float nowHp, float maxHp)
+        {
+            return _pluginInstance.Config.HealingMessage.Replace("{N}", amount.ToString()).Replace("{NOW}", nowHp.ToString()).Replace("{MAX}", maxHp.ToString());
         }
     }
 }
