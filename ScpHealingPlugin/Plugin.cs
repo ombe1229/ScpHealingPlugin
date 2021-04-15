@@ -1,7 +1,4 @@
-﻿using ServerEvents = Exiled.Events.Handlers.Server;
-using PlayerEvents = Exiled.Events.Handlers.Player;
-using MapEvents = Exiled.Events.Handlers.Map;
-using WarheadEvents = Exiled.Events.Handlers.Warhead;
+﻿using PlayerEvents = Exiled.Events.Handlers.Player;
 using Features = Exiled.API.Features;
 using Log = Exiled.API.Features.Log;
 
