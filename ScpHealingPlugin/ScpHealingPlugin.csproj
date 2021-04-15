@@ -32,12 +32,24 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\Desktop\Files\EXILED\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Exiled.API, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\Desktop\Files\EXILED\Exiled.API.dll</HintPath>
+        </Reference>
+        <Reference Include="Exiled.Events, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\Desktop\Files\EXILED\Exiled.Events.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Configs.cs" />
+        <Compile Include="EventHandlers.cs" />
+        <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
